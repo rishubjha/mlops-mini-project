@@ -48,7 +48,7 @@ def load_data(file_path: str) -> pd.DataFrame:
         raise
     except Exception as e:
         logger.error('Unexpected error occurred while loading the data: %s', e)
-        raise
+        raise 
 def evaluate_model(clf, X_test: np.ndarray, y_test: np.ndarray) -> dict:
     """Evaluate the model and return the evaluation metrics."""
     try:
@@ -76,7 +76,7 @@ def save_metrics(metrics: dict, file_path: str) -> None:
             json.dump(metrics, file, indent=4)
         logger.debug('Metrics saved to %s', file_path)
     except Exception as e:
-        logger.error('Error occurred while saving the metrics: %s', e)
+        logge r.error('Error occurred while saving the metrics: %s', e)
         raise
 def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
     """Save the model run ID and path to a JSON file."""
